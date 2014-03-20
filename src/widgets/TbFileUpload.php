@@ -52,7 +52,7 @@ class TbFileUpload extends CJuiInputWidget
 	public $previewImages = true;
 
 	/**
-	 * Whether or not to add the image processing pluing
+	 * Whether or not to add the image processing plugin
 	 */
 	public $imageProcessing = true;
 
@@ -101,7 +101,6 @@ class TbFileUpload extends CJuiInputWidget
 	 */
 	public function run()
 	{
-
 		list($name, $id) = $this->resolveNameID();
 
 		$this->htmlOptions['id'] = ($this->hasModel() ? get_class($this->model) : 'fileupload') . '-form';
