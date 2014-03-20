@@ -15,7 +15,7 @@
  *
  * @package booster.widgets.forms.inputs.wysiwyg
  */
-class TbMarkdownEditorJS extends CInputWidget
+class TbMarkdownEditorJs extends CInputWidget
 {
 	/**
 	 * Editor width

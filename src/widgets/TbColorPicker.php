@@ -88,7 +88,7 @@ class TbColorPicker extends CInputWidget
 	 */
 	public function registerClientScript($id)
 	{
-        Bootstrap::getBooster()->registerAssetJs('bootstrap.colorpicker.js', CClientScript::POS_HEAD);
+        Bootstrap::getBooster()->registerAssetJs('bootstrap.colorpicker.js');
         Bootstrap::getBooster()->registerAssetCss('bootstrap-colorpicker.css');
 
 		$options = !empty($this->format) ? CJavaScript::encode(array('format' => $this->format)) : '';
