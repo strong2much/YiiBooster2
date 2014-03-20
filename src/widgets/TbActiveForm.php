@@ -639,8 +639,9 @@ class TbActiveForm extends CActiveForm
 	{
 		$this->initRowOptions($rowOptions);
 
-		if (!isset($htmlOptions['labelOptions']['class']))
-			$htmlOptions['labelOptions']['class'] = 'checkbox';
+        self::addCssClass($htmlOptions['labelOptions'], 'checkbox');
+        if(!empty($htmlOptions['inline']))
+            self::addCssClass($htmlOptions['labelOptions'], 'inline');
 
 		if (!isset($htmlOptions['template']))
 			$htmlOptions['template'] = '{beginLabel}{input}{labelTitle}{endLabel}';
@@ -673,8 +674,9 @@ class TbActiveForm extends CActiveForm
 	{
 		$this->initRowOptions($rowOptions);
 
-		if (!isset($htmlOptions['labelOptions']['class']))
-			$htmlOptions['labelOptions']['class'] = 'radio';
+        self::addCssClass($htmlOptions['labelOptions'], 'radio');
+        if(!empty($htmlOptions['inline']))
+            self::addCssClass($htmlOptions['labelOptions'], 'inline');
 
 		if (!isset($htmlOptions['template']))
 			$htmlOptions['template'] = '{beginLabel}{input}{labelTitle}{endLabel}';
@@ -686,12 +688,6 @@ class TbActiveForm extends CActiveForm
 
 		return $this->customFieldRowInternal($fieldData, $model, $attribute, $rowOptions);
 	}
-
-	//public function buttonGroupRow($model, $attribute, $widgetOptions, $rowOptions = array())
-	//{
-	//	// TODO: this is future replacement for checkBoxGroupsList and radioButtonGroupsList
-	//	// TODO: but need to rewrite TbButtonGroup for field support
-	//}
 
 	/**
 	 * Generates a toggle button row for a model attribute.
