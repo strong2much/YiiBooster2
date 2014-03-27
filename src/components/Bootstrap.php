@@ -817,27 +817,23 @@ class Bootstrap extends CApplicationComponent
 		$this->registerPlugin(self::PLUGIN_POPOVER, $selector, $options);
 	}
 
-	/**
-	 * Registers the Bootstrap tooltip plugin.
-	 *
-	 * @param string $selector The selector to which to apply the popovers Bootstrap component.
-	 * Please note that it's not the selector which describes the elements which will receive popovers.
-	 * We are doing some optimization here: tooltip plugin is being initialized on body,
-	 * and it will delegate real tooltips to whatever selected by the selector passed in plugin options.
-	 * See the Bootstrap documentation about tooltip plugin option `selector`.
-	 * @param array $options the plugin options
-	 *
-	 * @see http://twitter.github.com/bootstrap/javascript.html#tooltip
-	 * @since 0.9.8
-	 * @deprecated 3.0.0
-	 */
-	public function registerTooltip($selector = 'body', $options = array())
-	{
-		if (empty($options['selector']))
-			$options['selector'] = $this->tooltipSelector;
+    /**
+     * Registers the Bootstrap tooltip plugin.
+     *
+     * @param string $selector The selector to which to apply the popovers Bootstrap component.
+     * @param array $options the plugin options
+     *
+     * @see http://twitter.github.com/bootstrap/javascript.html#tooltip
+     * @since 0.9.8
+     * @deprecated 3.0.0
+     */
+    public function registerTooltip($selector = null, $options = array())
+    {
+        if (empty($selector))
+            $selector = $this->tooltipSelector;
 
-		$this->registerPlugin(self::PLUGIN_TOOLTIP, $selector, $options);
-	}
+        $this->registerPlugin(self::PLUGIN_TOOLTIP, $selector, $options);
+    }
 
 	/**
 	 * Registers a Bootstrap plugin using the given selector and options.
