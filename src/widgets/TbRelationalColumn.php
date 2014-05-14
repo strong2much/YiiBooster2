@@ -62,7 +62,13 @@ class TbRelationalColumn extends TbDataColumn
 	 */
 	public $ajaxErrorMessage = 'Error';
 
-	/**
+    /**
+     * @var array $submitData allows you to merge extra data into the query string being sent to the server.
+     * normally the row id is sent as 'id'
+     */
+    public $submitData=array();
+
+    /**
 	 * widget initialization
 	 */
 	public function init()

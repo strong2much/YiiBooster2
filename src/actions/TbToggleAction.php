@@ -59,15 +59,15 @@ class TbToggleAction extends CAction
 	/**
 	 * Widgets run function
 	 *
-	 * @param integer $id
-	 * @param string $attribute
-	 *
 	 * @throws CHttpException
 	 */
-	public function run($id, $attribute)
-	{
-		if (Yii::app()->getRequest()->isPostRequest) {
-			$model = $this->loadModel($id);
+    public function run()
+    {
+        $pk = Yii::app()->request->getParam('pk');
+        $attribute = Yii::app()->request->getParam('attribute');
+
+        if (Yii::app()->getRequest()->isPostRequest) {
+            $model = $this->loadModel($pk);
 			$model->$attribute = ($model->$attribute == $this->noValue) ? $this->yesValue : $this->noValue;
 			$success = $model->save(false, array($attribute));
 
