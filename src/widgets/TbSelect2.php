@@ -130,7 +130,7 @@ class TbSelect2 extends CInputWidget
 
 		$options = !empty($this->options) ? CJavaScript::encode($this->options) : '';
 
-		if(! empty($this->val)) {
+		if(!empty($this->val) || $this->val==0) {
 			if(is_array($this->val)) {
 				$data = CJSON::encode($this->val);
 			} else {
