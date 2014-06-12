@@ -347,7 +347,7 @@ class Bootstrap extends CApplicationComponent
 	 */
 	public function getVersion()
 	{
-		return '3.0.1';
+		return '3.1.1';
 	}
 
 	/**
@@ -477,7 +477,7 @@ class Bootstrap extends CApplicationComponent
 		return array('select2' => array(
 			'baseUrl' => $this->getAssetsUrl() . '/select2/',
 			'js' => $jsFiles,
-			'css' => array('select2.css'),
+            'css' => array('select2.css', 'select2-bootstrap.css'),
 			'depends' => array('jquery'),
 		));
 	}

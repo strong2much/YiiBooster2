@@ -56,11 +56,11 @@ class TbToggleAction extends CAction
 	public $ajaxResponseOnFailed = 0;
 
 
-	/**
-	 * Widgets run function
-	 *
-	 * @throws CHttpException
-	 */
+    /**
+     * Widgets run function
+     *
+     * @throws CHttpException
+     */
     public function run()
     {
         $pk = Yii::app()->request->getParam('pk');
